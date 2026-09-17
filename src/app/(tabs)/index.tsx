@@ -1,7 +1,3 @@
-import { FlashList, type ListRenderItemInfo } from '@shopify/flash-list';
-import { router } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ConversationRow } from '@/features/inbox/components/ConversationRow';
 import { SearchBar } from '@/features/inbox/components/SearchBar';
 import { MOCK_CONVERSATIONS } from '@/features/inbox/mockConversations';
@@ -9,6 +5,10 @@ import type { ConversationRow as ConversationRowType } from '@/features/inbox/ty
 import { colors } from '@/shared/theme/colors';
 import { spacing } from '@/shared/theme/spacing';
 import { typography } from '@/shared/theme/typography';
+import { FlashList, type ListRenderItemInfo } from '@shopify/flash-list';
+import { router } from 'expo-router';
+import { StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 function keyExtractor(row: ConversationRowType) {
   return row.id;
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   title: {
     ...typography.title,
     color: colors.textPrimary,
-    paddingHorizontal: spacing.lg,
+    paddingHorizontal: spacing.xl,
     paddingBottom: spacing.md,
   },
 });
